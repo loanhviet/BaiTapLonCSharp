@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ComputerStoreWF\\ComputerStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|d:\\computerstorewf\\computerstore\\computerstore\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|solutionrelative:computerstore\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|d:\\computerstorewf\\computerstore\\computerstore\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|solutionrelative:computerstore\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|d:\\computerstorewf\\computerstore\\computerstore\\dal\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|solutionrelative:computerstore\\dal\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|d:\\computerstorewf\\computerstore\\computerstore\\dal\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|solutionrelative:computerstore\\dal\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|d:\\computerstorewf\\computerstore\\computerstore\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|solutionrelative:computerstore\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|d:\\computerstorewf\\computerstore\\computerstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2361919C-5EA8-4105-9879-320DC255C21E}|ComputerStore\\ComputerStore.csproj|solutionrelative:computerstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\DAL\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "ComputerStore\\DAL\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\DAL\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "ComputerStore\\DAL\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T09:36:13.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\DAL\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "ComputerStore\\DAL\\DatabaseHelper.cs",
+              "ToolTip": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\DAL\\DatabaseHelper.cs",
+              "RelativeToolTip": "ComputerStore\\DAL\\DatabaseHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAACrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T09:31:40.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "ComputerStore\\Models\\Customer.cs",
+              "ToolTip": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\Models\\Customer.cs",
+              "RelativeToolTip": "ComputerStore\\Models\\Customer.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T09:29:17.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\Forms\\Form1.cs",
+              "RelativeDocumentMoniker": "ComputerStore\\Forms\\Form1.cs",
+              "ToolTip": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\Forms\\Form1.cs*",
+              "RelativeToolTip": "ComputerStore\\Forms\\Form1.cs*",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T08:48:16.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\Program.cs",
+              "RelativeDocumentMoniker": "ComputerStore\\Program.cs",
+              "ToolTip": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\Program.cs",
+              "RelativeToolTip": "ComputerStore\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T09:29:05.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\Forms\\Form1.cs",
+              "RelativeDocumentMoniker": "ComputerStore\\Forms\\Form1.cs",
+              "ToolTip": "D:\\ComputerStoreWF\\ComputerStore\\ComputerStore\\Forms\\Form1.cs [Design]*",
+              "RelativeToolTip": "ComputerStore\\Forms\\Form1.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T08:35:59.75Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
