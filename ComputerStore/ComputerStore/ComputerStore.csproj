@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.Data.Sqlclient" Version="4.9.0" />
   </ItemGroup>
 
