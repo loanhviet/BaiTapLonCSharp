@@ -236,6 +236,7 @@
             dtvgCategories.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtvgCategories.Size = new Size(652, 388);
             dtvgCategories.TabIndex = 3;
+            dtvgCategories.CellClick += dtvgCategories_CellClick;
             // 
             // panel4
             // 
@@ -297,6 +298,7 @@
             btnCategoriesXoa.TabIndex = 2;
             btnCategoriesXoa.Text = "Xóa";
             btnCategoriesXoa.UseVisualStyleBackColor = true;
+            btnCategoriesXoa.Click += btnCategoriesXoa_Click;
             // 
             // btnCategoriesSua
             // 
@@ -306,6 +308,7 @@
             btnCategoriesSua.TabIndex = 1;
             btnCategoriesSua.Text = "Sửa";
             btnCategoriesSua.UseVisualStyleBackColor = true;
+            btnCategoriesSua.Click += btnCategoriesSua_Click;
             // 
             // btnCategoriesThem
             // 

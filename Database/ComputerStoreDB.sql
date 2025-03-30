@@ -49,3 +49,15 @@ CREATE TABLE ChiTietHoaDon (
 );
 
 
+CREATE TRIGGER trg_ResetIdentityAfterDelete
+ON LoaiHang
+AFTER DELETE
+AS
+BEGIN
+    
+    IF NOT EXISTS (SELECT 1 FROM LoaiHang)
+    BEGIN
+        
+        DBCC CHECKIDENT ('LoaiHang', RESEED, 0);
+    END
+END;
