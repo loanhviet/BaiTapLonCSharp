@@ -9,14 +9,17 @@ namespace ComputerStore
     {
         private readonly CategoryService _categoryService;
         private readonly ProductService _productService;
+        private readonly CustomerService _customerService;
 
         public Form1()
         {
             InitializeComponent();
             _categoryService = new CategoryService();
-            _productService = new ProductService(connectionString); // Khởi tạo _productService
+            _productService = new ProductService(connectionString);
+            _customerService = new CustomerService();
             loadcategories();
             LoadProducts();
+            LoadCustomers();
             FillCategoryComboBox();
 
         }
@@ -448,6 +451,151 @@ namespace ComputerStore
             cbbProduct.SelectedIndex = -1;
             dtvgProduct.ClearSelection();
 
+        }
+
+        private void LoadCustomers()
+        {
+            try
+            {
+
+                var customers = _customerService.GetAllCustomers();
+
+
+                dtvgKhachHang.DataSource = customers;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải danh sách khách hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ClearInputsCustomer()
+        {
+            txtKhachHangTenKH.Clear();
+            txtKhachHangDiaChiKH.Clear();
+            txtKhachHangSoDTKH.Clear();
+            dtvgKhachHang.ClearSelection();
+        }
+
+        private void dtvgKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow selectedRow = dtvgKhachHang.Rows[e.RowIndex];
+                    txtKhachHangTenKH.Text = selectedRow.Cells["TenKH"].Value?.ToString();
+                    txtKhachHangDiaChiKH.Text = selectedRow.Cells["DiaChi"].Value?.ToString();
+                    txtKhachHangSoDTKH.Text = selectedRow.Cells["SoDienThoai"].Value?.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xử lý sự kiện CellClick: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnKhachHangThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string tenKH = txtKhachHangTenKH.Text.Trim();
+                string diaChi = txtKhachHangDiaChiKH.Text.Trim();
+                string soDienThoai = txtKhachHangSoDTKH.Text.Trim();
+                var customer = new Customer
+                {
+                    TenKH = tenKH,
+                    DiaChi = diaChi,
+                    SoDienThoai = soDienThoai
+                };
+                _customerService.AddCustomer(customer);
+
+
+                LoadCustomers();
+
+
+                ClearInputsCustomer();
+
+                MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi thêm khách hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnKhachHangSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dtvgKhachHang.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một khách hàng để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                DataGridViewRow selectedRow = dtvgKhachHang.SelectedRows[0];
+                int maKH = Convert.ToInt32(selectedRow.Cells["MaKH"].Value);
+                string tenKH = txtKhachHangTenKH.Text.Trim();
+                string diaChi = txtKhachHangDiaChiKH.Text.Trim();
+                string soDienThoai = txtKhachHangSoDTKH.Text.Trim();
+                var customer = new Customer
+                {
+                    MaKH = maKH,
+                    TenKH = tenKH,
+                    DiaChi = diaChi,
+                    SoDienThoai = soDienThoai
+                };
+                _customerService.UpdateCustomer(customer);
+                LoadCustomers();
+                ClearInputsCustomer();
+
+                MessageBox.Show("Cập nhật khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi cập nhật khách hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnKhachHangXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dtvgKhachHang.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một khách hàng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                DataGridViewRow selectedRow = dtvgKhachHang.SelectedRows[0];
+                int maKH = Convert.ToInt32(selectedRow.Cells["MaKH"].Value);
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                _customerService.DeleteCustomer(maKH);
+                LoadCustomers();
+                ClearInputsCustomer();
+
+                MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xóa khách hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtKhachHangSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string keyword = txtKhachHangSearch.Text.Trim();
+                var customers = _customerService.SearchCustomers(keyword);
+                dtvgKhachHang.DataSource = customers;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tìm kiếm khách hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

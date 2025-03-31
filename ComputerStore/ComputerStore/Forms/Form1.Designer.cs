@@ -562,11 +562,15 @@
             // 
             // dtvgKhachHang
             // 
+            dtvgKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtvgKhachHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtvgKhachHang.Location = new Point(255, 56);
             dtvgKhachHang.Name = "dtvgKhachHang";
+            dtvgKhachHang.ReadOnly = true;
+            dtvgKhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtvgKhachHang.Size = new Size(652, 388);
             dtvgKhachHang.TabIndex = 3;
+            dtvgKhachHang.CellClick += dtvgKhachHang_CellClick;
             // 
             // panel13
             // 
@@ -660,6 +664,7 @@
             txtKhachHangSearch.Name = "txtKhachHangSearch";
             txtKhachHangSearch.Size = new Size(118, 20);
             txtKhachHangSearch.TabIndex = 14;
+            txtKhachHangSearch.TextChanged += txtKhachHangSearch_TextChanged;
             // 
             // btnKhachHangXoa
             // 
@@ -669,6 +674,7 @@
             btnKhachHangXoa.TabIndex = 2;
             btnKhachHangXoa.Text = "Xóa";
             btnKhachHangXoa.UseVisualStyleBackColor = true;
+            btnKhachHangXoa.Click += btnKhachHangXoa_Click;
             // 
             // btnKhachHangSua
             // 
@@ -678,6 +684,7 @@
             btnKhachHangSua.TabIndex = 1;
             btnKhachHangSua.Text = "Sửa";
             btnKhachHangSua.UseVisualStyleBackColor = true;
+            btnKhachHangSua.Click += btnKhachHangSua_Click;
             // 
             // btnKhachHangThem
             // 
@@ -688,6 +695,7 @@
             btnKhachHangThem.TabIndex = 0;
             btnKhachHangThem.Text = "Thêm";
             btnKhachHangThem.UseVisualStyleBackColor = false;
+            btnKhachHangThem.Click += btnKhachHangThem_Click;
             // 
             // panel14
             // 
