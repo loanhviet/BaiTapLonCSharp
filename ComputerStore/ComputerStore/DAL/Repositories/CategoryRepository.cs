@@ -70,7 +70,46 @@ namespace ComputerStore.DAL.Repositories
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                
             }
         }
+        public List<Category> SearchCategories(string keyword)
+        {
+            List<Category> categories = new List<Category>();
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                string query = "SELECT MaLoai, TenLoai FROM LoaiHang WHERE TenLoai LIKE @Keyword";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Keyword", $"%{keyword}%");
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    categories.Add(new Category
+                    {
+                        MaLoai = Convert.ToInt32(reader["MaLoai"]),
+                        TenLoai = reader["TenLoai"].ToString()
+                    });
+                }
+            }
+            return categories;
+
+        }
+        public string GetCategoryNameById(int maLoai)
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                string query = "SELECT TenLoai FROM LoaiHang WHERE MaLoai = @MaLoai";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaLoai", maLoai);
+                conn.Open();
+                var result = cmd.ExecuteScalar();
+                return result != null ? result.ToString() : "Không xác định";
+            }
+        }
+
+
     }
 }

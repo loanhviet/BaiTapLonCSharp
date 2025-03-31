@@ -289,6 +289,7 @@
             txtCategoriesSearch.Name = "txtCategoriesSearch";
             txtCategoriesSearch.Size = new Size(118, 22);
             txtCategoriesSearch.TabIndex = 3;
+            txtCategoriesSearch.TextChanged += txtCategoriesSearch_TextChanged;
             // 
             // btnCategoriesXoa
             // 
@@ -364,11 +365,15 @@
             // 
             // dtvgProduct
             // 
+            dtvgProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtvgProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtvgProduct.Location = new Point(255, 56);
             dtvgProduct.Name = "dtvgProduct";
+            dtvgProduct.ReadOnly = true;
+            dtvgProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtvgProduct.Size = new Size(652, 388);
             dtvgProduct.TabIndex = 3;
+            dtvgProduct.CellClick += dtvgProduct_CellClick;
             // 
             // panel7
             // 
@@ -482,6 +487,7 @@
             txtProductSearch.Name = "txtProductSearch";
             txtProductSearch.Size = new Size(118, 20);
             txtProductSearch.TabIndex = 3;
+            txtProductSearch.TextChanged += txtProductSearch_TextChanged;
             // 
             // btnProductXoa
             // 
@@ -491,6 +497,7 @@
             btnProductXoa.TabIndex = 2;
             btnProductXoa.Text = "Xóa";
             btnProductXoa.UseVisualStyleBackColor = true;
+            btnProductXoa.Click += btnProductXoa_Click;
             // 
             // btnProductSua
             // 
@@ -500,6 +507,7 @@
             btnProductSua.TabIndex = 1;
             btnProductSua.Text = "Sửa";
             btnProductSua.UseVisualStyleBackColor = true;
+            btnProductSua.Click += btnProductSua_Click;
             // 
             // btnProductThem
             // 
@@ -510,6 +518,7 @@
             btnProductThem.TabIndex = 0;
             btnProductThem.Text = "Thêm";
             btnProductThem.UseVisualStyleBackColor = false;
+            btnProductThem.Click += btnProductThem_Click;
             // 
             // panel8
             // 

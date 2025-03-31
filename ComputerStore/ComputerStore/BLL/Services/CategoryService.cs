@@ -53,5 +53,26 @@ namespace ComputerStore.BLL.Services
 
             _categoryRepository.DeleteCategory(maLoai);
         }
+        public List<Category> SearchCategories(string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                return GetAllCategories();
+            }
+
+            return _categoryRepository.SearchCategories(keyword);
+        }
+        public string GetCategoryNameById(int maLoai)
+        {
+            try
+            {
+                return _categoryRepository.GetCategoryNameById(maLoai);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy tên phân loại: {ex.Message}");
+            }
+        }
+
     }
 }
