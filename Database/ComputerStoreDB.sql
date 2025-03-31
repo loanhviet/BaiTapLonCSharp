@@ -61,3 +61,30 @@ BEGIN
         DBCC CHECKIDENT ('LoaiHang', RESEED, 0);
     END
 END;
+
+SELECT * FROM LOAIHANG
+
+SELECT * FROM MatHang
+
+
+CREATE TRIGGER trg_ResetIdentityAfterDelete_MatHang
+ON MatHang
+AFTER DELETE
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM MatHang)
+    BEGIN
+        DBCC CHECKIDENT ('MatHang', RESEED, 0);
+    END
+END;
+
+CREATE TRIGGER trg_ResetIdentityAfterDelete_KhachHang
+ON KhachHang
+AFTER DELETE
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM KhachHang)
+    BEGIN
+        DBCC CHECKIDENT ('KhachHang', RESEED, 0);
+    END
+END;
