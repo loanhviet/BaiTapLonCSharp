@@ -1,0 +1,9 @@
+echo # Visual Studio files > .gitignore
+echo .vs/ >> .gitignore
+echo *_i.c >> .gitignore
+echo *_p.c >> .gitignore
+echo *.obj >> .gitignore
+echo [Dd]ebug/ >> .gitignore
+echo [Rr]elease/ >> .gitignore
+echo [Bb]in/ >> .gitignore
+echo [Oo]bj/ >> .gitignore
